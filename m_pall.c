@@ -2,7 +2,7 @@
 /**
  * pall - prints the stack
  * @stack: stack given by main in start.c
- * @line_cnt: amount of lines
+ * @line_count: amount of lines
  *
  * Return: void
  */
