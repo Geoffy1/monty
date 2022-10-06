@@ -77,7 +77,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_count);
 } instruction_t;
 
 /**
@@ -102,7 +102,7 @@ void free_stack(stack_t *stack);
 size_t print_stack(const stack_t *stack);
 
 void push(stack_t **stack, unsigned int line_count);
-void pall(stack_t **stack, unsigned int line_countr);
+void pall(stack_t **stack, unsigned int line_count);
 void pint(stack_t **stack, unsigned int line_count);
 void pop(stack_t **stack, unsigned int line_count);
 void nop(stack_t **stack, unsigned int line_count);
@@ -122,6 +122,6 @@ void m_pstr(stack_t **stack, unsigned int line_count);
 void m_fs_close(int status, void *arg);
 void free_lineptr(int status, void *arg);
 
-void opcode(stack_t **stack, char *str, unsigned int line_cnt);
+void opcode(stack_t **stack, char *str, unsigned int line_count);
 
 #endif /* _MONTY_H_ */
