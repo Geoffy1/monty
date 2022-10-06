@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "monty.h"
 
 /**
@@ -10,14 +7,14 @@
  *
  * Return: void
  */
-void swap(stack_t **stack, unsigned int line_cnt)
+void swap(stack_t **stack, unsigned int line_count)
 {
 	stack_t *tmp = NULL;
 	int tmp_n = 0;
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_cnt);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_count);
 		exit(EXIT_FAILURE);
 	}
 	tmp = *stack;
