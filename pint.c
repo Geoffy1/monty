@@ -3,7 +3,7 @@
 /**
  * pint - print the value on top
  * @stack: stack given by main in start.c
- * @line_cnt: number of lines
+ * @line_count: number of lines
  *
  * Return: void
  */
