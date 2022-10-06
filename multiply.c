@@ -1,12 +1,8 @@
-#include <stdio.h>
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
 #include "monty.h"
 /**
  * _mul - divides the next top value by the top value
  * @stack: stack given by main
- * @line_cnt: line counter
+ * @line_count: line counter
  *
  * Return: void
  */
