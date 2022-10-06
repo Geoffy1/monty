@@ -1,60 +1,30 @@
 #include "monty.h"
 
 /**
- * _push - pushes an element to the stack
+ * m_push - push an integer onto the stack
+ * @stack: double pointer to the beginning of the stack
+ * @line_number: script line number
  *
- * @doubly: head of the linked list
- * @cline: line number
- * Return: no return
+ * Return: void
  */
-void _push(stack_t **doubly, unsigned int cline)
+void m_push(stack_t **stack, unsigned int line_number)
 {
-	int n, j;
+	char *arg;
+	int n;
 
-	if (!vglo.arg)
+	arg = strtok(NULL, "\n\t\r ");
+	if (arg == NULL || check_for_digit(arg))
 	{
-		dprintf(2, "L%u: ", cline);
-		dprintf(2, "usage: push integer\n");
-		free_vglo();
+		dprintf(STDOUT_FILENO,
+			"L%u: usage: push integer\n",
+			line_number);
 		exit(EXIT_FAILURE);
 	}
-
-	for (j = 0; vglo.arg[j] != '\0'; j++)
+	n = atoi(arg);
+	if (!add_node(stack, n))
 	{
-		if (!isdigit(vglo.arg[j]) && vglo.arg[j] != '-')
-		{
-			dprintf(2, "L%u: ", cline);
-			dprintf(2, "usage: push integer\n");
-			free_vglo();
-			exit(EXIT_FAILURE);
-		}
+		dprintf(STDOUT_FILENO, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
-
-	n = atoi(vglo.arg);
-
-	if (vglo.lifo == 1)
-		add_dnodeint(doubly, n);
-	else
-		add_dnodeint_end(doubly, n);
-}
-
-/**
- * _pall - prints all values on the stack
- *
- * @doubly: head of the linked list
- * @cline: line numbers
- * Return: no return
- */
-void _pall(stack_t **doubly, unsigned int cline)
-{
-	stack_t *aux;
-	(void)cline;
-
-	aux = *doubly;
-
-	while (aux)
-	{
-		printf("%d\n", aux->n);
-		aux = aux->next;
-	}
+	var.stack_len++;
 }
