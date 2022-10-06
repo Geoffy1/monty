@@ -7,7 +7,7 @@
  *
  * Return: void
  */
-void m_add(stack_t **stack, unsigned int line_number)
+void _add(stack_t **stack, unsigned int line_count)
 {
 	int n = 0;
 
