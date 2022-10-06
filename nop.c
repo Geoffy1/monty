@@ -3,7 +3,7 @@
 /**
  * nop - nothing here to see
  * @stack: no stack operated
- * @line_cnt : lines given not counted
+ * @line_count : lines given not counted
  *
  * Return: NOTHING
  */
