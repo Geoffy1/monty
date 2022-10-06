@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "monty.h"
 
 /**
@@ -10,7 +7,7 @@
  *
  * Return: void
  */
-void pint(stack_t **stack, unsigned int line_cnt)
+void pint(stack_t **stack, unsigned int line_count)
 {
 	if (!stack || !(*stack))
 	{
