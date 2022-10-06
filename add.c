@@ -1,30 +1,24 @@
 #include "monty.h"
 
 /**
- * _add - adds the top two elements of the stack
+ * m_add - add the top two elements of the stack
+ * @stack: double pointer tot he beginning of the stack
+ * @line_number: script line number
  *
- * @doubly: head of the linked list
- * @cline: line number;
- * Return: no return
+ * Return: void
  */
-void _add(stack_t **doubly, unsigned int cline)
+void m_add(stack_t **stack, unsigned int line_number)
 {
-	int m = 0;
-	stack_t *aux = NULL;
+	int n = 0;
 
-	aux = *doubly;
-
-	for (; aux != NULL; aux = aux->next, m++)
-		;
-
-	if (m < 2)
+	if (var.stack_len < 2)
 	{
-		dprintf(2, "L%u: can't add, stack too short\n", cline);
-		free_vglo();
+		dprintf(STDOUT_FILENO,
+			"L%u: can't add, stack too short\n",
+			line_number);
 		exit(EXIT_FAILURE);
 	}
-
-	aux = (*doubly)->next;
-	aux->n += (*doubly)->n;
-	_pop(doubly, cline);
+	n += (*stack)->n;
+	m_pop(stack, line_number);
+	(*stack)->n += n;
 }
