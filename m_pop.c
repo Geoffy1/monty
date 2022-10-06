@@ -6,7 +6,7 @@
  *
  * Return: void
  */
-void pop(stack_t **stack, unsigned int line_cnt)
+void pop(stack_t **stack, unsigned int line_count)
 {
 	stack_t *tmp = NULL;
 	if (!stack || !*stack)
