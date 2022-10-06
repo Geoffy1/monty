@@ -2,7 +2,7 @@
 /**
  * pop - pops the very top element of the stack
  * @stack: stack given by main in start.c
- * @line_cnt: line number for error messages
+ * @line_count: line number for error messages
  *
  * Return: void
  */
