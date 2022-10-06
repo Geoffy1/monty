@@ -2,7 +2,7 @@
 /**
  * push - push element into the stack
  * @stack: stack given by main
- * @line_cnt: amount of lines
+ * @line_count: amount of lines
  *
  * Return: void
  */
