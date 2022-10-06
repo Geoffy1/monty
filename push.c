@@ -1,6 +1,3 @@
-#include <ctype.h>
-#include <stdlib.h>
-#include <string.h>
 #include "monty.h"
 /**
  * push - push element into the stack
@@ -9,7 +6,7 @@
  *
  * Return: void
  */
-void push(stack_t **stack, unsigned int line_cnt)
+void push(stack_t **stack, unsigned int line_count)
 {
 	char *n = global.argument;
 	if ((is_digit(n)) == 0)
