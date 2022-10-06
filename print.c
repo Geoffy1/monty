@@ -1,10 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "monty.h"
 /**
  * pstr - prints the contents of a stack_t stack as a string
  * @stack: stack given by main
- * @line_cnt: line counter for error messages
+ * @line_count: line counter for error messages
  *
  * Return: nothing
  */
