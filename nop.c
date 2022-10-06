@@ -7,7 +7,7 @@
  *
  * Return: NOTHING
  */
-void nop(stack_t **stack, unsigned int line_cnt)
+void nop(stack_t **stack, unsigned int line_count)
 {
 	(void) stack;
 	(void) line_cnt;
