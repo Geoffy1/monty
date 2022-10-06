@@ -6,7 +6,7 @@
  *
  * Return: void
  */
-void _mul(stack_t **stack, unsigned int line_cnt)
+void _mul(stack_t **stack, unsigned int line_count)
 {
 	int result;
 	if (!stack || !*stack || !((*stack)->next))
