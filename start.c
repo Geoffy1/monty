@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	char *buffer = NULL;
 	char *str = NULL;
 	stack_t *stack = NULL;
-	unsigned int line_cnt = 1;
+	unsigned int line_count = 1;
 
 	global.data_struct = 1;  /* struct defined in monty.h L58*/
 	if (argc != 2)
@@ -36,18 +36,18 @@ int main(int argc, char **argv)
 			break;
 		if (*buffer == '\n')
 		{
-			line_cnt++;
+			line_count++;
 			continue;
 		}
 		str = strtok(buffer, " \t\n");
 		if (!str || *str == '#')
 		{
-			line_cnt++;
+			line_count++;
 			continue;
 		}
 		global.argument = strtok(NULL, " \t\n");
-		opcode(&stack, str, line_cnt);
-		line_cnt++;
+		opcode(&stack, str, line_count);
+		line_count++;
 	}
 	free(buffer);
 	free_stack(stack);
