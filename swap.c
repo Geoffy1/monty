@@ -6,7 +6,7 @@
 /**
  * swap -  swaps whole data stored
  * @stack: stack in main
- * @line_cnt: number of lines
+ * @line_count: number of lines
  *
  * Return: void
  */
