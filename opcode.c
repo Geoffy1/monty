@@ -1,17 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "./monty.h"
 
 /**
  * opcode - function in charge of running builtins
  * @stack: stack given by main
  * @str: string to compare
- * @line_cnt: amount of lines
+ * @line_count: amount of lines
  *
  * Return: nothing
  */
-void opcode(stack_t **stack, char *str, unsigned int line_cnt)
+void opcode(stack_t **stack, char *str, unsigned int line_count)
 {
 	int i = 0;
 
@@ -33,11 +30,11 @@ void opcode(stack_t **stack, char *str, unsigned int line_cnt)
 	{
 		if (strcmp(op[i].opcode, str) == 0)
 		{
-			op[i].f(stack, line_cnt);
+			op[i].f(stack, line_count);
 			return; /* if we found a match, run the function */
 		}
 		i++;
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, str);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_count, str);
 	exit(EXIT_FAILURE);
 }
